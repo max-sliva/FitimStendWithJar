@@ -40,9 +40,9 @@ class HelloApplication : Application() {
         println("path = $fxmlPath")
 //        println(HelloApplication::class.java.getResource("/my/hello-view.fxml"))
         println(URL("file:$fxmlPath"))
-        val fxmlLoader = FXMLLoader(this.javaClass.getResource("mainWindow.fxml"))
+//        val fxmlLoader = FXMLLoader(this.javaClass.getResource("mainWindow.fxml")) //для запуска из среды
 //        val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("/my/hello-view.fxml"))
-//        val fxmlLoader = FXMLLoader(URL("file:$fxmlPath"))
+        val fxmlLoader = FXMLLoader(URL("file:$fxmlPath")) //для jar-файла
         val scene = Scene(fxmlLoader.load())
         primaryStage?.title = "Hello!"
         primaryStage?.scene = scene
